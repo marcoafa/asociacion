@@ -1,0 +1,32 @@
+{% extends 'CunaAngeles/administrador.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<center><h1>Registro Infante</h1></center>
+  <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+<form method="POST" enctype="multipart/form-data">
+
+	{% csrf_token %}
+
+ 	<label>Nombre:</label><input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre"> <br>
+                       
+    <label>Apellidos:</label><input class="form-control" type="text" id="apellidos" name="apellidos" placeholder="Solicitud"><br>
+                          
+    <label>Edad:</label><input class="form-control" type="number" id="edad" name="edad"  placeholder="Edad"></input>
+    
+    <label>Fecha de Nacimiento:</label><input class="form-control" type="date" id="fechaNaci" name="fechaNaci"  placeholder="YYYY/MM/DD"></input>
+
+     <label>Fecha de Registro:</label><input class="form-control" type="date" id="fechaRegis" name="fechaRegis"  placeholder="YYYY/MM/DD"></input>
+    
+                          <br>
+
+   <button type="submit" class="btn btn-primary btn-block">Guardar</button>           
+   <button type="reset" class="btn btn-primary btn-block">Cancelar</button>  
+    
+</form>
+
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'CunaAngeles/administrador.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<center><h1>Expediente Escolar</h1></center>
+
+
+
+<table class="table table-reponsive">
+		<tr>
+			<th>Salud</th>
+			<th>Calificacion</th>
+			<th>Comentario</th>
+			<th>Niño</th>
+		
+			
+		</tr>
+		{%for item in object_list %}
+		<tr>
+			<td>{{item.salud}}</td>
+			<td>{{item.calificacion}}</td>
+			<td>{{item.comentario}}</td>
+			<td>{{item.nino}}</td>
+			
+		</tr>
+
+		{% endfor %}
+
+	</table>
+{% endblock %}

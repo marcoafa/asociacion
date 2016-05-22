@@ -1,0 +1,53 @@
+{% extends 'CunaAngeles/administrador.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<center><h1>Registro Medico</h1></center>
+ <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+<form method="POST" enctype="multipart/form-data">
+
+	{% csrf_token %}
+ 
+
+ 	<label>Nombre del niño:</label>
+  <select class="form-control" type="text">
+      {% for item in objects_list %}
+    <option id="nino" name="nino" value="{{item.id}}">{{item.id}}{{item.nombre}} {{item.apellidos}}</option>
+    {% endfor %}
+    </select> <br>
+    
+
+     <label>Alergia</label><input class="form-control" type="text" id="alergia" name="alergia" placeholder="Alergia"><br>
+                       
+    <label>Altura:</label><input class="form-control" type="text" id="altura" name="altura" placeholder="Altura"><br>
+                          
+    <label>Peso:</label><input class="form-control" type="number" id="peso" name="peso"  placeholder="Peso"></input><br>
+
+     <label>Edad:</label><input class="form-control" type="number" id="edad" name="edad"  placeholder="Edad"></input><br>
+    
+    <label>Enfermedades Hereditarias:</label><input class="form-control" type="text" id="enfermedades_hereditarias" name="enfermedades_hereditarias"  placeholder="Enfermedades Hereditarias"></input><br>
+
+    <label>Discapacidad:</label><input class="form-control" type="text" id="discapacidad" name="discapacidad"  placeholder="Discapacidad"></input><br>
+
+    <label>Comentario:</label><textarea class="form-control" rows="4" id="comentario" name="comentario"  placeholder="Comentario"></textarea>
+    
+                          <br>
+
+   <button type="submit" class="btn btn-primary btn-block">Guardar</button>           
+   <button type="reset" class="btn btn-primary btn-block">Cancelar</button>  
+
+  
+ 
+
+ 
+  
+ 
+  
+    
+</form>
+	</div>
+</div>
+
+{% endblock %}

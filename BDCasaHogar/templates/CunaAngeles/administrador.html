@@ -1,0 +1,97 @@
+
+{% load staticfiles %}
+
+{% if user.is_authenticated %}
+
+<html>
+
+
+
+<head>  
+
+    <title>administrador</title>
+    <link href="{% static 'bootstrap/css/colos.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+
+     <link href="{% static 'bootstrap/css/simple-sidebar.css' %}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'bootstrap/css/freelancer.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+
+
+<body>
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+         <div class="container">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand"> <a href="/logout">Inicio</a></li>
+                <li><a href ="/registroNino">Registro niños</a></li>
+                <li><a href ="/registroEventos">Registro eventos</a></li>
+                <li><a href ="/inventario">Registro inventario</a></li>
+                <li><a href="/editar">Editar Registros</a></li>
+                <li><a href="/eliminar">Eliminar Registros</a></li>
+                <li><a href="/expediente_registro">Registro Expedientes</a></li>
+                <li><a href="/expediente">Expedientes</a></li>
+                <li><a href="/logout">Logout</a></li>
+           
+            </ul>
+         </div>
+        </div>
+
+<nav class="navbar">
+  
+  
+</nav>
+
+
+</body>
+
+</html>
+{% else %}
+
+<html>
+
+
+
+<head>  
+
+    <title>administrador</title>
+    <link href="{% static 'bootstrap/css/colos.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+
+     <link href="{% static 'bootstrap/css/simple-sidebar.css' %}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'bootstrap/css/freelancer.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body class="colorsito">
+                
+                <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                     <br>
+                     
+                     <div class="col-lg-12 text-center">
+
+            
+                     
+<h3><a href="/login">Click para Loguiarte</a></h3>
+</div>
+</div>
+</div>
+
+</body>
+
+{% endif %}
+
+
+{% block content %}{% endblock %}

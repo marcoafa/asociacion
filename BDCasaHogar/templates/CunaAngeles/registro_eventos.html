@@ -1,0 +1,33 @@
+{% extends 'CunaAngeles/administrador.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<center><h1>Registro Eventos</h1></center>
+ <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+<form method="POST" enctype="multipart/form-data">
+
+	{% csrf_token %}
+
+ 	<label>Nombre:</label><input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre"> <br>
+                       
+    <label>Lugar:</label><input class="form-control" type="text" id="lugar" name="lugar" placeholder="Lugar"><br>
+                          
+    <label>Fecha:</label><input class="form-control" type="date" id="fecha" name="fecha"  placeholder="YYYY/MM/DD"></input><br>
+    
+    <label>Hora:</label><input class="form-control" type="time" id="hora" name="hora"  placeholder="HH:MM:SS"></input><br>
+
+    <label>Patrocinadores:</label><input class="form-control" type="text" id="patrocinadores" name="patrocinadores"  placeholder="Patrocinadores"></input>
+    
+                          <br>
+
+   <button type="submit" class="btn btn-primary btn-block">Guardar</button>           
+   <button type="reset" class="btn btn-primary btn-block">Cancelar</button>  
+    
+</form>
+	</div>
+</div>
+
+
+{% endblock %}

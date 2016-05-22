@@ -1,0 +1,74 @@
+{% load staticfiles %}
+ <title>login</title> 
+    <link href="{% static 'bootstrap/css/colos.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'bootstrap/css/freelancer.css' %}" rel="stylesheet">
+    
+<body>
+<nav class="navbar  navbar-default navbar-static-top">
+  <div class="container">
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              
+                
+                
+                <li><a href="/logout">Inicio</a></li>
+               
+
+            </ul>
+  
+   </div>
+
+  </div>
+  
+</nav>
+
+             
+              
+                   
+           
+             
+
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                     <br>
+                     
+                     <div class="col-lg-12 text-center">
+                    <h3>Login</h3>
+                    <br>
+                      </div>
+
+                      {% if user.is_authenticated %}
+                           <div class="col-lg-12 text-center">
+                           <h3>Estas loguiado como Administrador</h3>
+                               Deslogueate para poder entrar
+                            <br>
+                          </div>
+                        
+    
+                      {% else %}
+             
+                      <form method="POST">
+                      
+                      {% csrf_token %}
+                      
+                       <br>
+                   
+                       <label>Usuario:</label><input class="form-control" type="text" name="username" placeholder="Usuario">
+                       
+                       
+                       <label>Contraseña:</label><input class="form-control" type="password" name="password"  placeholder="Contraseña" ><br>
+                       
+                      <button type="submit" class="btn btn-primary btn-block">Acceder</button>           
+                      <button type="reset" class="btn btn-primary btn-block">Cancelar</button>  
+
+                    
+
+                      </form>
+                     {% endif %}
+                  </div>
+                 </div>
+            
+</body>
+
+{% block content %}{% endblock %}

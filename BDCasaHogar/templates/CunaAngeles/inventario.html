@@ -1,0 +1,26 @@
+{% extends 'CunaAngeles/administrador.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<center><h1>Inventario</h1></center>
+<div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+<form method="POST" enctype="multipart/form-data">
+
+	{% csrf_token %}
+	
+ 	<label>Nombre:</label><input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre"> <br>
+                          
+    <label>Fecha Registrada:</label><input class="form-control" type="date" id="fechaRegistrada" name="fechaRegistrada"  placeholder="Fecha Registrada"></input><br>
+
+     <label>Fecha Caducación:</label><input class="form-control" type="date" id="fechaCaducacion" name="fechaCaducacion"  placeholder="Fecha Caducación"></input><br>
+
+    <button type="submit" class="btn btn-primary btn-block">Guardar</button>           
+   <button type="reset" class="btn btn-primary btn-block">Cancelar</button>  
+    
+</form>
+	</div>
+</div>
+
+{% endblock %}

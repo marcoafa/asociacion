@@ -1,0 +1,33 @@
+{% extends 'CunaAngeles/administrador.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<center><h1>Seleccionar lo que deseas eliminar</h1></center>
+
+
+
+ <div class="col-lg-8 col-lg-offset-2">
+                     
+                     
+
+<div class="container">
+  <br>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Escoge
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+     
+      <li><a href="/ninos_eliminar">Niños</a></li>
+      <li><a href="/eventos_eliminar/">Eventos</a></li>
+      <li><a href="/ex_escolar_eliminar">Expediente Escolar</a></li>
+      <li><a href="/ex_medico_eliminar">Expediente Medico</a></li>
+      <li><a href="/inventario_eliminar">Inventario</a></li>
+
+
+    </ul>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'CunaAngeles/usuarios.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<center><h1>Solicitudes</h1></center>
+<form method="POST" enctype="multipart/form-data">
+
+	{% csrf_token %}
+ 	{{ form.as_p}}
+
+   <button type="submit" class="btn btn-default">Send</button>           
+   <button type="reset" class="btn btn-default">Cancel</button>  
+    
+</form>
+
+
+{% endblock %}
