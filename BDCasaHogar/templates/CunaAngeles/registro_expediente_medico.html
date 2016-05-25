@@ -9,9 +9,8 @@
 <form method="POST" enctype="multipart/form-data">
 
 	{% csrf_token %}
- 
-
- 	<label>Nombre del niño:</label>
+ {{form.as_p}}
+ <!--	<label>Nombre del niño:</label>
   <select class="form-control" type="text">
       {% for item in objects_list %}
     <option id="nino" name="nino" value="{{item.id}}">{{item.id}}{{item.nombre}} {{item.apellidos}}</option>
@@ -31,7 +30,7 @@
 
     <label>Discapacidad:</label><input class="form-control" type="text" id="discapacidad" name="discapacidad"  placeholder="Discapacidad"></input><br>
 
-    <label>Comentario:</label><textarea class="form-control" rows="4" id="comentario" name="comentario"  placeholder="Comentario"></textarea>
+    <label>Comentario:</label><textarea class="form-control" rows="4" id="comentario" name="comentario"  placeholder="Comentario"></textarea>-->
     
                           <br>
 

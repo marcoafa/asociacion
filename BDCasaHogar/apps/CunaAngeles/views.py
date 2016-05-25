@@ -96,28 +96,8 @@ class Expedientes_Esco_Registro(CreateView):
 	template_name='CunaAngeles/registro_expediente_escolar.html'
 	model = Expendiente_escolar
 	fields='__all__'
-	success_url=reverse_lazy('expedientesEscolar')
+	success_url=reverse_lazy('expedientesregisEscolar')
 
-	def get_context_data(self, **kwargs):
-		ctx = super(Expedientes_Esco_Registro, self).get_context_data(**kwargs)
-		ctx['objects_list'] = Nino.objects.all()
-		return ctx
-	
-	def post(self, request, *args, **kwargs):
-		flag = False
-		p = Expendiente_escolar()
-		p.nino = request.POST['nino']
-		p.aescolaridad = request.POST['escolaridad']
-		p.tutor = request.POST['tutor']
-		p.hora_entrada = request.POST['hora_entrada']
-		p.hora_salida  = request.POST['hora_salida ']
-		p.comentario = request.POST['comentario']
-		p.edad = request.POST['edad']
-		
-		p.save()
-		flag = True
-
-		return render(request,'CunaAngeles/registro_nino.html', {'flag':flag}) 
 
 
 class Eventos_registros(CreateView):
@@ -126,20 +106,7 @@ class Eventos_registros(CreateView):
 	fields=['nombre','lugar','fecha','hora','patrocinadores']
 	success_url=reverse_lazy('registroEventos') 
 
-	def post(self, request, *args, **kwargs):
-		flag = False
-		p = Eventos()
-		p.nombre = request.POST['nombre']
-		p.lugar = request.POST['lugar']
-		p.fecha = request.POST['fecha']
-		p.hora = request.POST['hora']
-		p.patrocinadores = request.POST['patrocinadores']
-		
-		p.save()
-		flag = True
-
-		return render(request,'CunaAngeles/registro_eventos.html', {'flag':flag})
-
+	
 
 class Inventario_registros(CreateView):
 	template_name='CunaAngeles/inventario.html'
@@ -253,8 +220,21 @@ class inventario_eliminar(ListView):
 	template_name='CunaAngeles/Delete/inventario_eliminar.html'
 	model = Inventario
 
+class ninos_admin(ListView):
+	template_name='CunaAngeles/ninos_admin.html'
+	model = Nino
 
+class eventos_admin(ListView):
+	template_name='CunaAngeles/eventos_admin.html'
+	model = Eventos
 
+class inventario_admin(ListView):
+	template_name='CunaAngeles/inventario_admin.html'
+	model = Inventario
+
+class solicitud_admin(ListView):
+	template_name='CunaAngeles/solicitudes_admin.html'
+	model = Inventario
 
 class delete_nino(DeleteView):
 	model =  Nino

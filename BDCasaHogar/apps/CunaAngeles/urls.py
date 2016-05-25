@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import vist, adminnistrador, expediente, Nino_registros, Eventos_registros, Inventario_registros, Solicitudes_registros, Eventos_Report, Ninos_Report, Expedientes_Esco, Expendiente_medi,expediente_registro , Expedientes_Esco_Registro, Expedientes_medi_Registro, editar,  update_ninos, ninos_editar, eventos_editar, inventario_editar, ex_medico_editar, ex_escolar_editar, update_eventos, update_inventario, update_exp_medico, update_exp_escolar, eliminar, delete_nino, ninos_eliminar, eventos_eliminar,  ex_medico_eliminar,  ex_escolar_eliminar, inventario_eliminar
+from .views import vist, adminnistrador, expediente, Nino_registros, Eventos_registros, Inventario_registros, Solicitudes_registros, Eventos_Report, Ninos_Report, Expedientes_Esco, Expendiente_medi,expediente_registro , Expedientes_Esco_Registro, Expedientes_medi_Registro, editar,  update_ninos, ninos_editar, eventos_editar, inventario_editar, ex_medico_editar, ex_escolar_editar, update_eventos, update_inventario, update_exp_medico, update_exp_escolar, eliminar, delete_nino, ninos_eliminar, eventos_eliminar,  ex_medico_eliminar,  ex_escolar_eliminar, inventario_eliminar, ninos_admin, eventos_admin, inventario_admin, solicitud_admin
 
 urlpatterns = [
 	url(r'^$', Solicitudes_registros.as_view(), name='inicio'),
@@ -39,7 +39,12 @@ urlpatterns = [
 	url(r'^ex_medico_eliminar/$', ex_medico_eliminar.as_view(), name='ex_medico_eliminar'),
 	url(r'^ex_escolar_eliminar/$', ex_escolar_eliminar.as_view(), name='ex_escolar_eliminar'),
     url(r'^delete_nino/(?P<pk>[-\w]+)/$',delete_nino.as_view(), name = 'delete_nino'),
-	
-		
-	
+
+
+    url(r'^ninos_admin/$', ninos_admin.as_view(), name='ninos_admin'),
+	url(r'^inventario_admin/$', inventario_admin.as_view(), name='inventario_admin'),
+	url(r'^eventos_admin/$', eventos_admin.as_view(), name='eventos_admin'),
+	url(r'^solicitudes_admin/$', solicitud_admin.as_view(), name='solicitudes_admin'),
+
+
 ]
