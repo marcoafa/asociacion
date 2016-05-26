@@ -9,12 +9,12 @@
 <form method="POST" enctype="multipart/form-data">
 
 	{% csrf_token %}
+{{form.as_p}}
 
-
- 	  <label>Nombre del niño:</label><select class="form-control" type="text" id="nino" name="nino" placeholder="Nombre del Niño">
+ 	 <!-- <label>Nombre del niño:</label><select class="form-control" type="text" id="nino" name="nino" placeholder="Nombre del Niño">
       {% for item in objects_list %}
       {{item.nombre}}
-    <option id="{{item.id}}">{{item.nombre}} {{item.apellidos}}</option>
+    <option value="{{item.id}}">{{item.nombre}} {{item.apellidos}}</option>
     </select> <br>
     {% endfor %}
                        
@@ -26,7 +26,7 @@
 
     <label>Hora de Salida:</label><input class="form-control" type="datetime" id="hora_salida" name="hora_salida"  placeholder="HH:MM:SS"></input><br>
 
-    <label>Comentario:</label><textarea class="form-control" rows="4" id="comentario" name="comentario"  placeholder="Comentario"></textarea>
+    <label>Comentario:</label><textarea class="form-control" rows="4" id="comentario" name="comentario"  placeholder="Comentario"></textarea>-->
     
     <br>
 
