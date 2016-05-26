@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, patterns, url
 from django.contrib import admin
 from django.conf    import settings
-from django.conf.urls.static    import static
+#from django.conf.urls.static    import static
 admin.autodiscover()
 
 urlpatterns=patterns('',
@@ -24,4 +24,5 @@ urlpatterns=patterns('',
     url(r'^', include('apps.CunaAngeles.urls')),
  
 
-)  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)#  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

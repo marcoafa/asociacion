@@ -15,6 +15,7 @@ import os.path
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 MEDIA_URL='http://127.0.0.1:8000/media/'
 MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR),'media')
 # Quick-start development settings - unsuitable for production
@@ -119,15 +120,19 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = '/home/marco/asociacion/BDCasaHogar/static/'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
-
+#STATICFILES_DIRS = '/home/marco/asociacion/BDCasaHogar/static/'
+#STATICFILES_DIRS = (
+#os.path.join(PROJECT_ROOT, 'static/'),
+#)
 from django.core.urlresolvers import reverse_lazy
 
 LOGIN_URL = reverse_lazy('inicio')
 LOGIN_REDIRECT_URL = reverse_lazy('administrador')
 LOGOUT_URL = reverse_lazy('logout')
+
+
